@@ -40,7 +40,7 @@ export default function Footer() {
                         <span style={{ color: "var(--accent)" }}>{" />"}</span>
                     </span>
                     <span style={{ color: "var(--fg-subtle)", fontSize: 13 }}>
-                        © {year}
+                        © {year} -
                     </span>
                 </div>
 
