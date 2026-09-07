@@ -64,7 +64,6 @@ export default function Navbar() {
                     }}
                 >
                     <span style={{ color: "var(--accent)" }}>{"<"}</span>
-                    YN
                     <span style={{ color: "var(--accent)" }}>{" />"}</span>
                 </a>
 
@@ -97,35 +96,6 @@ export default function Navbar() {
                             {l.label}
                         </button>
                     ))}
-                    <button
-                        onClick={() => handleLink("#contact")}
-                        style={{
-                            marginLeft: 8,
-                            background: "var(--accent)",
-                            color: "#fff",
-                            border: "none",
-                            borderRadius: 8,
-                            padding: "8px 18px",
-                            fontSize: 14,
-                            fontWeight: 500,
-                            cursor: "pointer",
-                            fontFamily: "inherit",
-                            boxShadow: "0 0 0 1px rgba(94,106,210,0.5), 0 4px 12px rgba(94,106,210,0.3), inset 0 1px 0 0 rgba(255,255,255,0.15)",
-                            transition: "background 0.2s ease, box-shadow 0.2s ease, transform 0.15s ease",
-                        }}
-                        onMouseEnter={(e) => {
-                            (e.currentTarget as HTMLElement).style.background = "var(--accent-bright)";
-                            (e.currentTarget as HTMLElement).style.boxShadow = "0 0 0 1px rgba(94,106,210,0.6), 0 8px 24px rgba(94,106,210,0.4), inset 0 1px 0 0 rgba(255,255,255,0.2)";
-                        }}
-                        onMouseLeave={(e) => {
-                            (e.currentTarget as HTMLElement).style.background = "var(--accent)";
-                            (e.currentTarget as HTMLElement).style.boxShadow = "0 0 0 1px rgba(94,106,210,0.5), 0 4px 12px rgba(94,106,210,0.3), inset 0 1px 0 0 rgba(255,255,255,0.15)";
-                        }}
-                        onMouseDown={(e) => { (e.currentTarget as HTMLElement).style.transform = "scale(0.98)"; }}
-                        onMouseUp={(e) => { (e.currentTarget as HTMLElement).style.transform = "scale(1)"; }}
-                    >
-                        Hire Me
-                    </button>
                 </nav>
 
                 {/* Mobile hamburger */}

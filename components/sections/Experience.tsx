@@ -4,42 +4,34 @@ import { useRef, useEffect } from "react";
 
 const experiences = [
     {
-        period: "2024 — Present",
-        role: "Senior Frontend Engineer",
-        company: "Company Name",
-        companyType: "Full-time",
+        period: "2022 — Present",
+        role: "UI/UX Freelancer",
+        company: "Freelance",
+        companyType: "Freelancer",
         description:
-            "Led the redesign of the core product dashboard, improving load performance by 40%. Built and maintained a shared component library used across 3 product teams. Championed design-system adoption and mentored junior engineers.",
-        tech: ["React", "TypeScript", "Next.js", "GSAP", "Figma"],
+            "Design and create interactive prototypes using Figma to visualize application workflows and user interfaces prior to development.",
+        tech: ["React", "Next.js", "Figma"],
     },
     {
-        period: "2023 — 2024",
-        role: "Frontend Engineer",
-        company: "Another Company",
-        companyType: "Full-time",
+        period: "2024",
+        role: "IT Internship",
+        company: "Dinas Komunikasi dan Informatika Karanganyar",
+        companyType: "Internship",
         description:
-            "Developed responsive marketing pages and internal tooling. Collaborated closely with designers to implement pixel-perfect UIs at high velocity. Introduced Storybook for component documentation.",
-        tech: ["React", "Tailwind CSS", "GraphQL", "Figma"],
+            "Developed and maintained an internal information system tailored for departmental needs using the Laravel framework.",
+        tech: ["Laravel", "PHP", "Tailwind CSS"],
     },
     {
-        period: "2022 — 2023",
-        role: "UI Developer",
-        company: "Agency Name",
-        companyType: "Contract",
+        period: "2020 — 2021",
+        role: "3D Artist",
+        company: "Kertas Putih Creative",
+        companyType: "Full-Time",
         description:
-            "Built interactive landing pages and e-commerce storefronts for various clients. Focused on performance optimization, animation, and cross-browser compatibility.",
-        tech: ["HTML/CSS", "JavaScript", "GSAP", "WordPress"],
-    },
-    {
-        period: "2021 — 2022",
-        role: "Junior Frontend Developer",
-        company: "Startup Name",
-        companyType: "Full-time",
-        description:
-            "Contributed to the MVP of a SaaS product. Implemented feature flags, user authentication flows, and the onboarding experience.",
-        tech: ["React", "Redux", "Sass", "Node.js"],
+            "Responsible for creating 3D models, designing spatial arrangements, and executing final rendering processes to deliver optimal visual concepts.",
+        tech: ["Blender"],
     },
 ];
+
 
 export default function Experience() {
     const sectionRef = useRef<HTMLDivElement>(null);
@@ -93,7 +85,7 @@ export default function Experience() {
                     letterSpacing: "-0.03em", lineHeight: 1.1,
                     margin: "0 0 64px",
                 }}>
-                    Where I&apos;ve worked
+                    Experience Timelines
                 </h2>
 
                 {/* Timeline */}

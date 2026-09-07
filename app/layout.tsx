@@ -10,10 +10,10 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-    title: "Your Name — Portfolio",
+    title: "Ariefin Nur Hidayat - Portofolio",
     description: "Personal portfolio — frontend engineer & designer",
     openGraph: {
-        title: "Your Name — Portfolio",
+        title: "Ariefin Nur Hidayat - Portofolio",
         description: "Personal portfolio — frontend engineer & designer",
         type: "website",
     },

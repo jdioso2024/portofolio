@@ -21,15 +21,16 @@ interface Project {
 const projects: Project[] = [
     {
         title: "Chandramawa",
-        description: "A high-performance SaaS dashboard with real-time data visualization and complex state management.",
-        tech: ["Next.js", "TypeScript", "GSAP", "Postgres"],
+        description: "Konsep aplikasi pengelolaan sampah yang menghadirkan pengalaman digital yang lebih sederhana, interaktif, dan menyenangkan bagi pengguna.",
+        tech: ["Figma"],
         role: "Lead Engineer",
         colSpan: "col-span-2",
         rowSpan: "row-span-2",
         accentColor: "rgba(94,106,210,0.3)",
         hasImage: true,
         imageUrl: "/projects/Chandramaw.webp",
-        overview: "Detailed case study content goes here. You can describe the challenges faced, the architecture decisions made, and the outcome of the project.",
+        overview: "Merancang antarmuka aplikasi yang membantu pengguna menemukan lokasi pengumpulan sampah, memilih kategori sampah, serta mengatur proses pengambilan sampah. Desain menggunakan pendekatan visual yang playful dan bersahabat agar aktivitas memilah dan mendaur ulang sampah terasa lebih menarik.",
+        link: "https://www.figma.com/proto/1fasUr9KwD9ZHRiQ9raVEH/Chandramawa-Project?node-id=165-491&p=f&viewport=-4372%2C-1010%2C0.42&t=cgdP5eQV5OM3y6xM-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=134%3A432&page-id=0%3A1",
     },
     {
         title: "Phillia Adventure Park",
@@ -40,34 +41,38 @@ const projects: Project[] = [
         hasImage: true,
         imageUrl: "/projects/phillia2.webp",
         overview: "Design website ini dirancang dengan pendekatan responsive design agar pengalaman menjelajah tetap nyaman baik melalui desktop maupun mobile.",
+        link: "https://www.figma.com/proto/wS8UoX1S8u8pDKvOQzccx0/PHILIA?node-id=0-1&p=f&viewport=88%2C298%2C0.08&t=FiZ99CuCAAwF4JQd-0&scaling=scale-down&content-scaling=fixed&starting-point-node-id=9%3A59&show-proto-sidebar=1",
     },
     {
         title: "Company Profile PT Dayana Energi Nusantara",
-        description: "Mobile-first design system built from scratch, deployed across 3 products.",
+        description: "Website company profile yang dirancang untuk menampilkan layanan, kapabilitas, dan identitas PT Dayana Energi Nusantara melalui pengalaman digital yang profesional dan responsif.",
         tech: ["React", "NEXT"],
-        role: "Design Engineer",
+        role: "Front-End Engineer",
         accentColor: "rgba(139,92,246,0.25)",
         imageUrl: "/projects/DEN.webp",
-        overview: "Detailed case study content goes here. You can describe the challenges faced, the architecture decisions made, and the outcome of the project.",
+        overview: "Mengembangkan website company profile untuk perusahaan yang bergerak di bidang energi dan infrastruktur. Website dirancang dengan struktur informasi yang jelas dan tampilan yang profesional agar pengguna dapat memahami layanan serta profil perusahaan dengan mudah.",
+        link: "https://demo-compro-2.pages.dev/",
     },
     {
-        title: "Project Delta",
-        description: "AI-powered writing tool with real-time collaboration and rich-text editing.",
-        tech: ["Next.js", "OpenAI", "Y.js", "Supabase"],
-        role: "Fullstack",
+        title: "ATMICUP 2023",
+        description: "Eksplorasi visual bergaya pixel art yang menggabungkan nuansa retro gaming dengan karakter fantasi untuk membangun identitas visual ATMICUP 2023.",
+        tech: ["Adobe After Effects"],
+        role: "Visual Asset Creation",
         colSpan: "col-span-2",
         accentColor: "rgba(79,70,229,0.25)",
-        imageUrl: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop",
-        overview: "Detailed case study content goes here. You can describe the challenges faced, the architecture decisions made, and the outcome of the project.",
+        imageUrl: "/projects/ATMICUP2023.webp",
+        overview: "Membuat aset visual untuk ATMICUP 2023 dengan pendekatan pixel art yang terinspirasi dari game klasik dan karakter fantasi. Elemen naga digunakan sebagai karakter utama untuk memberikan kesan kompetitif, playful, dan memorable yang sesuai dengan nuansa acara gaming.",
+        link: "https://drive.google.com/drive/folders/1MKyxx-X4RnM8_QAF3kyVkZhntOmK8w44?usp=sharing",
     },
     {
-        title: "Project Epsilon",
-        description: "Developer tool CLI + web interface for managing cloud infrastructure.",
-        tech: ["Node.js", "React", "Docker", "AWS"],
-        role: "Backend + UI",
+        title: "Project Skrining Autisme Anak Tangguh",
+        description: "Website edukasi dan skrining yang dirancang untuk membantu orang tua memahami perkembangan anak dan melakukan skrining awal dengan cara yang lebih mudah dan ramah.",
+        tech: ["WordPress"],
+        role: "Wordpress Engineer",
         accentColor: "rgba(67,56,202,0.25)",
-        imageUrl: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop",
-        overview: "Detailed case study content goes here. You can describe the challenges faced, the architecture decisions made, and the outcome of the project.",
+        imageUrl: "/projects/AnakTangguh.webp",
+        overview: "Mengembangkan website untuk membantu orang tua mendapatkan informasi mengenai perkembangan anak serta proses skrining autisme. Tampilan dibuat menggunakan pendekatan visual yang ramah anak, ilustratif, dan sederhana agar informasi yang disampaikan terasa lebih mudah dipahami.",
+        link: "https://anaktangguh.com/",
     },
 ];
 
@@ -260,9 +265,6 @@ export default function Work() {
                     }}>
                         Selected projects
                     </h2>
-                    <p style={{ color: "var(--fg-muted)", fontSize: 14, margin: 0, maxWidth: 300 }}>
-                        A curated selection of work — placeholder content until the real projects are added.
-                    </p>
                 </div>
 
                 {/* Bento grid */}

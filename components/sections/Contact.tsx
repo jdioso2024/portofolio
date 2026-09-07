@@ -1,19 +1,18 @@
 "use client";
 
-import { useRef, useEffect, useState } from "react";
-import { Github, Linkedin, Mail, Send } from "lucide-react";
+import { useRef, useEffect } from "react";
+import { Github, Linkedin, Twitter, Instagram, X } from "lucide-react";
 
 const socials = [
-    { icon: Github, label: "GitHub", href: "https://github.com/yourusername" },
-    { icon: Linkedin, label: "LinkedIn", href: "https://linkedin.com/in/yourusername" },
-    { icon: Mail, label: "Email", href: "mailto:you@example.com" },
+    { icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/in/ariefin-nur-hidayat-0a96aa248/" },
+    { icon: Instagram, label: "Instagram", href: "https://www.instagram.com/arifinnipin/" },
+    { icon: X, label: "X", href: "https://x.com/tobi_kadachi_?s=11&t=3JCpxNB_oRj6LxXmGwoVBQ" },
+    { icon: Github, label: "GitHub", href: "https://github.com/jdioso2024" },
 ];
 
 export default function Contact() {
     const sectionRef = useRef<HTMLDivElement>(null);
     const formRef = useRef<HTMLDivElement>(null);
-    const [sending, setSending] = useState(false);
-    const [sent, setSent] = useState(false);
 
     useEffect(() => {
         (async () => {
@@ -30,38 +29,6 @@ export default function Contact() {
             );
         })();
     }, []);
-
-    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-        e.preventDefault();
-        setSending(true);
-        await new Promise((r) => setTimeout(r, 1200));
-        setSending(false);
-        setSent(true);
-    };
-
-    const inputStyle: React.CSSProperties = {
-        width: "100%",
-        background: "#0F0F12",
-        border: "1px solid rgba(255,255,255,0.08)",
-        borderRadius: 10,
-        padding: "14px 16px",
-        fontSize: 14,
-        color: "#e8e8ee",
-        fontFamily: "inherit",
-        outline: "none",
-        transition: "border-color 0.2s ease, box-shadow 0.2s ease",
-        boxSizing: "border-box",
-    };
-
-    const handleFocus = (e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-        e.currentTarget.style.borderColor = "rgba(94,106,210,0.6)";
-        e.currentTarget.style.boxShadow = "0 0 0 3px rgba(94,106,210,0.15)";
-    };
-
-    const handleBlur = (e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-        e.currentTarget.style.borderColor = "rgba(255,255,255,0.08)";
-        e.currentTarget.style.boxShadow = "none";
-    };
 
     return (
         <section
@@ -107,184 +74,53 @@ export default function Contact() {
                         Have a project in mind or just want to chat? I&apos;d love to hear from you. I&apos;ll get back within 24 hours.
                     </p>
 
-                    {sent ? (
-                        <div style={{
-                            textAlign: "center",
-                            background: "linear-gradient(to bottom, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.02) 100%)",
-                            border: "1px solid rgba(94,106,210,0.3)",
-                            borderRadius: 20,
-                            padding: "64px 40px",
-                            boxShadow: "0 0 60px rgba(94,106,210,0.08)",
-                        }}>
-                            <div style={{
-                                width: 56, height: 56, borderRadius: "50%",
-                                background: "rgba(94,106,210,0.15)",
-                                border: "1px solid rgba(94,106,210,0.3)",
-                                display: "flex", alignItems: "center", justifyContent: "center",
-                                margin: "0 auto 24px",
-                            }}>
-                                <Send size={22} color="var(--accent)" />
-                            </div>
-                            <h3 style={{ fontSize: 22, fontWeight: 600, color: "var(--fg)", margin: "0 0 8px", letterSpacing: "-0.02em" }}>
-                                Message sent!
-                            </h3>
-                            <p style={{ color: "var(--fg-muted)", fontSize: 15, margin: 0 }}>
-                                Thanks for reaching out. I&apos;ll be in touch soon.
-                            </p>
-                        </div>
-                    ) : (
-                        <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: 16 }}>
-                            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16 }}>
-                                <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
-                                    <label style={{ fontSize: 13, color: "var(--fg-muted)", fontWeight: 500 }}>Name</label>
-                                    <input
-                                        type="text"
-                                        placeholder="Your name"
-                                        required
-                                        style={inputStyle}
-                                        onFocus={handleFocus}
-                                        onBlur={handleBlur}
-                                    />
-                                </div>
-                                <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
-                                    <label style={{ fontSize: 13, color: "var(--fg-muted)", fontWeight: 500 }}>Email</label>
-                                    <input
-                                        type="email"
-                                        placeholder="your@email.com"
-                                        required
-                                        style={inputStyle}
-                                        onFocus={handleFocus}
-                                        onBlur={handleBlur}
-                                    />
-                                </div>
-                            </div>
-
-                            <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
-                                <label style={{ fontSize: 13, color: "var(--fg-muted)", fontWeight: 500 }}>Subject</label>
-                                <input
-                                    type="text"
-                                    placeholder="What's this about?"
-                                    style={inputStyle}
-                                    onFocus={handleFocus}
-                                    onBlur={handleBlur}
-                                />
-                            </div>
-
-                            <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
-                                <label style={{ fontSize: 13, color: "var(--fg-muted)", fontWeight: 500 }}>Message</label>
-                                <textarea
-                                    placeholder="Tell me about your project..."
-                                    required
-                                    rows={6}
-                                    style={{ ...inputStyle, resize: "vertical", minHeight: 140 }}
-                                    onFocus={handleFocus}
-                                    onBlur={handleBlur}
-                                />
-                            </div>
-
-                            <button
-                                type="submit"
-                                disabled={sending}
-                                style={{
-                                    background: sending ? "rgba(94,106,210,0.6)" : "var(--accent)",
-                                    color: "#fff",
-                                    border: "none",
-                                    borderRadius: 10,
-                                    padding: "16px 32px",
-                                    fontSize: 15,
-                                    fontWeight: 500,
-                                    cursor: sending ? "not-allowed" : "pointer",
-                                    fontFamily: "inherit",
-                                    display: "flex",
-                                    alignItems: "center",
-                                    justifyContent: "center",
-                                    gap: 10,
-                                    width: "100%",
-                                    boxShadow: "0 0 0 1px rgba(94,106,210,0.5), 0 4px 20px rgba(94,106,210,0.3), inset 0 1px 0 0 rgba(255,255,255,0.15)",
-                                    transition: "all 0.2s ease",
-                                }}
-                                onMouseEnter={(e) => {
-                                    if (sending) return;
-                                    const el = e.currentTarget;
-                                    el.style.background = "var(--accent-bright)";
-                                    el.style.boxShadow = "0 0 0 1px rgba(94,106,210,0.6), 0 8px 32px rgba(94,106,210,0.4), inset 0 1px 0 0 rgba(255,255,255,0.2)";
-                                    el.style.transform = "translateY(-2px)";
-                                }}
-                                onMouseLeave={(e) => {
-                                    const el = e.currentTarget;
-                                    el.style.background = "var(--accent)";
-                                    el.style.boxShadow = "0 0 0 1px rgba(94,106,210,0.5), 0 4px 20px rgba(94,106,210,0.3), inset 0 1px 0 0 rgba(255,255,255,0.15)";
-                                    el.style.transform = "translateY(0)";
-                                }}
-                            >
-                                {sending ? (
-                                    <>
-                                        <div style={{
-                                            width: 16, height: 16, borderRadius: "50%",
-                                            border: "2px solid rgba(255,255,255,0.3)",
-                                            borderTopColor: "#fff",
-                                            animation: "spin 0.8s linear infinite",
-                                        }} />
-                                        Sending...
-                                    </>
-                                ) : (
-                                    <>
-                                        Send Message
-                                        <Send size={15} />
-                                    </>
-                                )}
-                            </button>
-                        </form>
-                    )}
-
-                    {/* Social links */}
-                    <div style={{ display: "flex", justifyContent: "center", gap: 16, marginTop: 48 }}>
+                    <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: 24, marginTop: 48 }}>
                         {socials.map(({ icon: Icon, label, href }) => (
                             <a
                                 key={label}
                                 href={href}
-                                aria-label={label}
-                                target="_blank"
-                                rel="noopener noreferrer"
+                                target={href.startsWith("http") ? "_blank" : undefined}
+                                rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
                                 style={{
-                                    display: "flex", alignItems: "center", gap: 8,
-                                    color: "var(--fg-muted)", textDecoration: "none",
-                                    fontSize: 14,
-                                    padding: "10px 16px",
-                                    borderRadius: 10,
-                                    border: "1px solid rgba(255,255,255,0.06)",
-                                    background: "rgba(255,255,255,0.03)",
-                                    transition: "all 0.2s ease",
+                                    display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: 16,
+                                    background: "rgba(255,255,255,0.02)",
+                                    border: "1px solid rgba(255,255,255,0.05)",
+                                    borderRadius: 24,
+                                    padding: "48px 24px",
+                                    color: "var(--fg)", textDecoration: "none",
+                                    transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
                                 }}
                                 onMouseEnter={(e) => {
                                     const el = e.currentTarget;
-                                    el.style.color = "var(--fg)";
-                                    el.style.borderColor = "rgba(94,106,210,0.3)";
+                                    el.style.borderColor = "rgba(94,106,210,0.4)";
                                     el.style.background = "rgba(94,106,210,0.06)";
-                                    el.style.transform = "translateY(-2px)";
+                                    el.style.transform = "translateY(-6px)";
+                                    el.style.boxShadow = "0 20px 40px rgba(0,0,0,0.3), 0 0 40px rgba(94,106,210,0.15)";
                                 }}
                                 onMouseLeave={(e) => {
                                     const el = e.currentTarget;
-                                    el.style.color = "var(--fg-muted)";
-                                    el.style.borderColor = "rgba(255,255,255,0.06)";
-                                    el.style.background = "rgba(255,255,255,0.03)";
+                                    el.style.borderColor = "rgba(255,255,255,0.05)";
+                                    el.style.background = "rgba(255,255,255,0.02)";
                                     el.style.transform = "translateY(0)";
+                                    el.style.boxShadow = "none";
                                 }}
                             >
-                                <Icon size={16} />
-                                {label}
+                                <div style={{
+                                    width: 80, height: 80, borderRadius: "50%",
+                                    background: "rgba(255,255,255,0.03)",
+                                    border: "1px solid rgba(255,255,255,0.08)",
+                                    display: "flex", alignItems: "center", justifyContent: "center",
+                                    marginBottom: 8, transition: "background 0.3s ease",
+                                }}>
+                                    <Icon size={32} color="var(--accent)" />
+                                </div>
+                                <span style={{ fontSize: 18, fontWeight: 500, letterSpacing: "-0.01em" }}>{label}</span>
+                                <span style={{ fontSize: 14, color: "var(--fg-muted)" }}>Let's connect</span>
                             </a>
                         ))}
                     </div>
                 </div>
             </div>
-
-            <style>{`
-        @keyframes spin { to { transform: rotate(360deg); } }
-        @media (max-width: 540px) {
-          form > div:first-child { grid-template-columns: 1fr !important; }
-        }
-      `}</style>
         </section>
     );
 }

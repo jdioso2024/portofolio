@@ -4,14 +4,7 @@ import { useRef, useEffect } from "react";
 import { useMouseSpotlight } from "@/hooks/useMouseSpotlight";
 
 const skills = [
-    "React", "Next.js", "TypeScript", "Node.js", "GSAP", "Figma",
-    "TailwindCSS", "PostgreSQL", "Docker", "Git",
-];
-
-const stats = [
-    { value: "3+", label: "Years Experience" },
-    { value: "20+", label: "Projects Built" },
-    { value: "10+", label: "Happy Clients" },
+    "React", "Javascript", "Node.js", "Python", "Laravel", "PHP", "Figma", "Blender",
 ];
 
 export default function About() {
@@ -64,7 +57,7 @@ export default function About() {
                 alignItems: "stretch",
             }}>
                 {/* Left: text */}
-                <div ref={leftRef} style={{ opacity: 0 }}>
+                <div ref={leftRef} style={{ opacity: 0, display: "flex", flexDirection: "column", justifyContent: "center" }}>
                     <h2
                         className="text-gradient"
                         style={{ fontSize: "clamp(2rem, 4vw, 3rem)", fontWeight: 600, letterSpacing: "-0.03em", lineHeight: 1.1, margin: "0 0 24px" }}
@@ -72,7 +65,7 @@ export default function About() {
                         Crafting the web,<br />one pixel at a time
                     </h2>
                     <p style={{ color: "var(--fg-muted)", fontSize: 16, lineHeight: 1.8, marginBottom: 20 }}>
-                        I&apos;m a frontend engineer passionate about building high-quality digital products. I love the intersection of design and engineering — creating interfaces that are not only functional but feel genuinely delightful to use.
+                        I'm a UI/UX designer and frontend developer passionate about building visually stunning digital products. I thrive at the intersection of design and engineering — creating interfaces that are not only functional but aesthetically delightful to use.
                     </p>
                     <p style={{ color: "var(--fg-muted)", fontSize: 16, lineHeight: 1.8, marginBottom: 40 }}>
                         With a strong eye for detail, I bring design systems to life through clean, performant code. When I&apos;m not coding, I&apos;m exploring UI design trends, contributing to open source, or perfecting my coffee brewing technique.
@@ -141,7 +134,7 @@ export default function About() {
                             background: "rgba(0,0,0,0.3)",
                         }}>
                             <img
-                                src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=2072&auto=format&fit=crop"
+                                src="/projects/fotome.webp"
                                 alt="Workspace preview"
                                 style={{
                                     width: "100%",
@@ -156,21 +149,6 @@ export default function About() {
                             <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, var(--bg-elevated), transparent)", opacity: 0.4, pointerEvents: "none" }} />
                         </div>
 
-                        {/* Stats grid */}
-                        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 12, marginBottom: 32 }}>
-                            {stats.map((s, i) => (
-                                <div key={i} style={{
-                                    display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center", gap: 8,
-                                    borderRight: i < stats.length - 1 ? "1px solid rgba(255,255,255,0.05)" : "none",
-                                }}>
-                                    <div style={{ fontSize: "1.75rem", fontWeight: 600, letterSpacing: "-0.02em", color: "var(--accent)", lineHeight: 1 }}>
-                                        {s.value}
-                                    </div>
-                                    <div style={{ color: "var(--fg-muted)", fontSize: 13, lineHeight: 1.3, maxWidth: 80 }}>{s.label}</div>
-                                </div>
-                            ))}
-                        </div>
-
                         {/* Mini status */}
                         <div style={{
                             display: "flex", alignItems: "center", gap: 10,
@@ -178,6 +156,7 @@ export default function About() {
                             border: "1px solid rgba(255,255,255,0.06)",
                             borderRadius: 10,
                             padding: "12px 16px",
+                            marginTop: "auto"
                         }}>
                             <div style={{
                                 width: 8, height: 8, borderRadius: "50%",
