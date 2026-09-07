@@ -44,10 +44,10 @@ const projects: Project[] = [
     {
         title: "Company Profile PT Dayana Energi Nusantara",
         description: "Mobile-first design system built from scratch, deployed across 3 products.",
-        tech: ["Figma", "React", "Storybook"],
+        tech: ["React", "NEXT"],
         role: "Design Engineer",
         accentColor: "rgba(139,92,246,0.25)",
-        imageUrl: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop",
+        imageUrl: "/projects/DEN.webp",
         overview: "Detailed case study content goes here. You can describe the challenges faced, the architecture decisions made, and the outcome of the project.",
     },
     {
