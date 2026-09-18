@@ -81,7 +81,7 @@ export default function About() {
                             Crafting the web,<br />one pixel at a time
                         </h2>
                         <p style={{ color: "var(--fg-muted)", fontSize: 16, lineHeight: 1.8, marginBottom: 20 }}>
-                            I&apos;m UI/UX designer and frontend developer passionate about building visually stunning digital products. I thrive at the intersection of design and engineering — creating interfaces that are not only functional but aesthetically delightful to use.
+                            I&apos;m a UI/UX designer and frontend developer passionate about building visually stunning digital products. I thrive at the intersection of design and engineering — creating interfaces that are not only functional but aesthetically delightful to use.
                         </p>
                         <p style={{ color: "var(--fg-muted)", fontSize: 16, lineHeight: 1.8, marginBottom: 40 }}>
                             With a strong eye for detail, I bring design systems to life through clean, performant code. When I&apos;m not coding, I&apos;m exploring UI design trends, contributing to open source, or perfecting my coffee brewing technique.
