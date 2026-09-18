@@ -11,7 +11,7 @@ export function useMouseSpotlight() {
         const rect = ref.current.getBoundingClientRect();
         const x = e.clientX - rect.left;
         const y = e.clientY - rect.top;
-        spotRef.current.style.background = `radial-gradient(300px circle at ${x}px ${y}px, rgba(94,106,210,0.12), transparent 80%)`;
+        spotRef.current.style.background = `radial-gradient(300px circle at ${x}px ${y}px, rgba(81, 81, 81, 0.12), transparent 80%)`;
         spotRef.current.style.opacity = "1";
     }, []);
 

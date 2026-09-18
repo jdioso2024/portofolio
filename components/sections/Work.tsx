@@ -68,12 +68,12 @@ const projects: Project[] = [
     },
     {
         title: "Project Skrining Autisme Anak Tangguh",
-        description: "Parents of young children often lack accessible, trustworthy information about autism early detection. Anak Tangguh was built to close that gap with a friendly, web-based resource.",
+        description: "Parents of young children often lack accessible, trustworthy information about autism early detection. Anak Tangguh was built to close that gap with a dedicated, web-based screening resource.",
         tech: ["WordPress"],
         role: "Wordpress Engineer",
         accentColor: "rgba(67,56,202,0.25)",
         imageUrl: "/projects/AnakTangguh.webp",
-        overview: "I built the Anak Tangguh website as an educational and early-screening platform for parents. The site uses WordPress with a highly visual and illustration-led design approach — deliberately accessible and non-clinical in tone — to ensure parents feel guided rather than overwhelmed.\n\nContent is structured so that key information about developmental milestones and screening steps is easy to navigate, reducing the effort required to take the first step toward getting a child assessed.",
+        overview: "I built the Anak Tangguh website closely focused on early-screening for autism in children. The site uses WordPress with a highly visual and illustration-led design approach — deliberately accessible and non-clinical in tone — to ensure parents feel guided rather than overwhelmed.\n\nContent is structured so that key information about developmental milestones and screening steps is easy to navigate, reducing the effort required to take the first step toward getting a child assessed.",
         link: "https://anaktangguh.com/",
     },
 ];
