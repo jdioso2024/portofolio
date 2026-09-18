@@ -61,10 +61,11 @@ export default function Navbar() {
                         letterSpacing: "-0.02em",
                         color: "var(--fg)",
                         textDecoration: "none",
+                        display: "flex",
+                        alignItems: "center"
                     }}
                 >
-                    <span style={{ color: "var(--accent)" }}>{"<"}</span>
-                    <span style={{ color: "var(--accent)" }}>{" />"}</span>
+                    <img src="/logo.svg" alt="Logo" style={{ height: 32, width: "auto" }} />
                 </a>
 
                 {/* Desktop nav */}
@@ -158,24 +159,6 @@ export default function Navbar() {
                             {l.label}
                         </button>
                     ))}
-                    <button
-                        onClick={() => handleLink("#contact")}
-                        style={{
-                            marginTop: 8,
-                            background: "var(--accent)",
-                            color: "#fff",
-                            border: "none",
-                            borderRadius: 10,
-                            padding: "14px 18px",
-                            fontSize: 15,
-                            fontWeight: 500,
-                            cursor: "pointer",
-                            fontFamily: "inherit",
-                            boxShadow: "0 0 0 1px rgba(94,106,210,0.5), 0 4px 12px rgba(94,106,210,0.3)",
-                        }}
-                    >
-                        Hire Me
-                    </button>
                 </div>
             </div>
 

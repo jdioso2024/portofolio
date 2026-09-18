@@ -16,62 +16,64 @@ interface Project {
     link?: string;
     imageUrl?: string;
     overview?: string;
+    achievement?: string;
 }
 
 const projects: Project[] = [
     {
         title: "Chandramawa",
-        description: "Konsep aplikasi pengelolaan sampah yang menghadirkan pengalaman digital yang lebih sederhana, interaktif, dan menyenangkan bagi pengguna.",
+        description: "Many people find sorting and recycling waste confusing and tedious — there was no engaging digital tool to simplify the process. Chandramawa was designed to change that.",
         tech: ["Figma"],
-        role: "Lead Engineer",
+        role: "Head of Technology",
         colSpan: "col-span-2",
         rowSpan: "row-span-2",
-        accentColor: "rgba(94,106,210,0.3)",
+        accentColor: "rgba(255, 255, 255,0.3)",
         hasImage: true,
         imageUrl: "/projects/Chandramaw.webp",
-        overview: "Merancang antarmuka aplikasi yang membantu pengguna menemukan lokasi pengumpulan sampah, memilih kategori sampah, serta mengatur proses pengambilan sampah. Desain menggunakan pendekatan visual yang playful dan bersahabat agar aktivitas memilah dan mendaur ulang sampah terasa lebih menarik.",
+        overview: "As Head of Technology, I led the end-to-end product design — defining the user flow, structuring information architecture, and designing all UI screens in Figma. The app guides users through locating waste collection points, selecting waste categories, and scheduling pickups. The visual language is deliberately playful and approachable to make recycling feel less like a chore and more like a habit.\n\nThe project was pitched at a Business Competition at Management and Science University (MSU) Malaysia in 2024, where the Chandramawa team secured 3rd Place.",
+        achievement: "🏆 3rd Place · Business Pitching Competition · MSU Malaysia 2024",
         link: "https://www.figma.com/proto/1fasUr9KwD9ZHRiQ9raVEH/Chandramawa-Project?node-id=165-491&p=f&viewport=-4372%2C-1010%2C0.42&t=cgdP5eQV5OM3y6xM-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=134%3A432&page-id=0%3A1",
     },
     {
         title: "Phillia Adventure Park",
-        description: "Website experience untuk adventure park yang dirancang untuk memperkenalkan wahana, memberikan informasi kunjungan, dan memudahkan pengunjung menemukan aktivitas petualangan mereka.",
+        description: "Philia needed a digital presence that could communicate the excitement of an adventure park while making it easy for potential visitors to explore attractions and plan their trip.",
         tech: ["Figma"],
         role: "UI/UX Designer",
         accentColor: "rgba(99,102,241,0.25)",
         hasImage: true,
         imageUrl: "/projects/phillia2.webp",
-        overview: "Design website ini dirancang dengan pendekatan responsive design agar pengalaman menjelajah tetap nyaman baik melalui desktop maupun mobile.",
+        overview: "I designed the full website experience for Philia Adventure Park across both desktop and mobile viewports. The design prioritized clear information hierarchy — making attractions, pricing, and visit info easy to find — while using energetic typography and imagery to reinforce the park's adventurous brand personality.\n\nThe responsive design approach ensured a consistent and comfortable browsing experience regardless of device, reducing friction for users planning a visit.",
         link: "https://www.figma.com/proto/wS8UoX1S8u8pDKvOQzccx0/PHILIA?node-id=0-1&p=f&viewport=88%2C298%2C0.08&t=FiZ99CuCAAwF4JQd-0&scaling=scale-down&content-scaling=fixed&starting-point-node-id=9%3A59&show-proto-sidebar=1",
     },
     {
         title: "Company Profile PT Dayana Energi Nusantara",
-        description: "Website company profile yang dirancang untuk menampilkan layanan, kapabilitas, dan identitas PT Dayana Energi Nusantara melalui pengalaman digital yang profesional dan responsif.",
+        description: "PT DEN required a professional web presence to communicate their identity, services, and capabilities in the energy and infrastructure sector to potential partners and clients.",
         tech: ["React", "NEXT"],
         role: "Front-End Engineer",
         accentColor: "rgba(139,92,246,0.25)",
         imageUrl: "/projects/DEN.webp",
-        overview: "Mengembangkan website company profile untuk perusahaan yang bergerak di bidang energi dan infrastruktur. Website dirancang dengan struktur informasi yang jelas dan tampilan yang profesional agar pengguna dapat memahami layanan serta profil perusahaan dengan mudah.",
+        overview: "I developed the full company profile website from the ground up using Next.js and GSAP. The site structure was designed for clarity — each section guides visitors through the company's background, service offerings, and project track record in a logical, digestible sequence.\n\nGSAP-powered scroll animations were used selectively to add a sense of polish and motion without compromising performance or readability. The result is a professional, fast-loading site that accurately represents PT DEN's standing in the industry.",
         link: "https://demo-compro-2.pages.dev/",
     },
     {
         title: "ATMICUP 2023",
-        description: "Eksplorasi visual bergaya pixel art yang menggabungkan nuansa retro gaming dengan karakter fantasi untuk membangun identitas visual ATMICUP 2023.",
+        description: "ATMICUP 2023 needed distinctive visual assets that would give the gaming competition a recognizable identity — something that felt simultaneously competitive and fun.",
         tech: ["Adobe After Effects"],
         role: "Visual Asset Creation",
         colSpan: "col-span-2",
         accentColor: "rgba(79,70,229,0.25)",
         imageUrl: "/projects/ATMICUP2023.webp",
-        overview: "Membuat aset visual untuk ATMICUP 2023 dengan pendekatan pixel art yang terinspirasi dari game klasik dan karakter fantasi. Elemen naga digunakan sebagai karakter utama untuk memberikan kesan kompetitif, playful, dan memorable yang sesuai dengan nuansa acara gaming.",
+        overview: "I created the visual identity assets for ATMICUP 2023 using a pixel art style inspired by classic retro games and high-fantasy themes. A dragon character was developed as the central mascot — its design strikes a balance between fierce and approachable, fitting for a student gaming event.\n\nThe assets were produced in Adobe After Effects and delivered as animated visuals suitable for event screens, promotional materials, and digital banners.",
         link: "https://drive.google.com/drive/folders/1MKyxx-X4RnM8_QAF3kyVkZhntOmK8w44?usp=sharing",
     },
     {
         title: "Project Skrining Autisme Anak Tangguh",
-        description: "Website edukasi dan skrining yang dirancang untuk membantu orang tua memahami perkembangan anak dan melakukan skrining awal dengan cara yang lebih mudah dan ramah.",
+        description: "Parents of young children often lack accessible, trustworthy information about autism early detection. Anak Tangguh was built to close that gap with a friendly, web-based resource.",
         tech: ["WordPress"],
         role: "Wordpress Engineer",
         accentColor: "rgba(67,56,202,0.25)",
         imageUrl: "/projects/AnakTangguh.webp",
-        overview: "Mengembangkan website untuk membantu orang tua mendapatkan informasi mengenai perkembangan anak serta proses skrining autisme. Tampilan dibuat menggunakan pendekatan visual yang ramah anak, ilustratif, dan sederhana agar informasi yang disampaikan terasa lebih mudah dipahami.",
+        overview: "I built the Anak Tangguh website as an educational and early-screening platform for parents. The site uses WordPress with a highly visual and illustration-led design approach — deliberately accessible and non-clinical in tone — to ensure parents feel guided rather than overwhelmed.\n\nContent is structured so that key information about developmental milestones and screening steps is easy to navigate, reducing the effort required to take the first step toward getting a child assessed.",
         link: "https://anaktangguh.com/",
     },
 ];
@@ -102,8 +104,8 @@ function ProjectCard({ project, index, onClick }: { project: Project; index: num
             }}
             onMouseEnter={(e) => {
                 const el = e.currentTarget;
-                el.style.borderColor = "rgba(94,106,210,0.25)";
-                el.style.boxShadow = "0 0 0 1px rgba(255,255,255,0.10), 0 8px 40px rgba(0,0,0,0.5), 0 0 80px rgba(94,106,210,0.08)";
+                el.style.borderColor = "rgba(255, 255, 255,0.25)";
+                el.style.boxShadow = "0 0 0 1px rgba(255,255,255,0.10), 0 8px 40px rgba(0,0,0,0.5), 0 0 80px rgba(255, 255, 255,0.08)";
                 el.style.transform = "translateY(-4px)";
             }}
             onMouseLeave={(e) => {
@@ -117,18 +119,12 @@ function ProjectCard({ project, index, onClick }: { project: Project; index: num
             {/* Spotlight */}
             <div ref={spotRef} style={{ position: "absolute", inset: 0, transition: "opacity 0.3s ease", opacity: 0, pointerEvents: "none" }} />
 
-            {/* Accent glow blob */}
-            <div style={{
-                position: "absolute", bottom: -40, right: -40,
-                width: 200, height: 200,
-                background: `radial-gradient(circle, ${project.accentColor || "rgba(94,106,210,0.2)"} 0%, transparent 70%)`,
-                filter: "blur(40px)", pointerEvents: "none",
-            }} />
+            {/* Accent glow blob removed */}
 
             {/* Top accent line */}
             <div style={{
                 position: "absolute", top: 0, left: 24, right: 24, height: 1,
-                background: "linear-gradient(to right, transparent, rgba(94,106,210,0.3), transparent)",
+                background: "linear-gradient(to right, transparent, rgba(255, 255, 255,0.3), transparent)",
             }} />
 
             {/* Header */}
@@ -136,9 +132,9 @@ function ProjectCard({ project, index, onClick }: { project: Project; index: num
                 <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 16 }}>
                     <span style={{
                         fontSize: 11, fontFamily: "monospace", letterSpacing: "0.1em", textTransform: "uppercase",
-                        color: "rgba(94,106,210,0.8)",
-                        background: "rgba(94,106,210,0.1)",
-                        border: "1px solid rgba(94,106,210,0.2)",
+                        color: "rgba(255, 255, 255,0.8)",
+                        background: "rgba(255, 255, 255,0.1)",
+                        border: "1px solid rgba(255, 255, 255,0.2)",
                         borderRadius: 100, padding: "3px 10px",
                     }}>
                         {project.role}
@@ -160,21 +156,36 @@ function ProjectCard({ project, index, onClick }: { project: Project; index: num
                 }}>
                     {project.title}
                 </h3>
+                {project.achievement && (
+                    <div style={{
+                        display: "inline-flex", alignItems: "center", gap: 6,
+                        fontSize: 11, fontWeight: 500,
+                        color: "rgba(255, 255, 255,0.9)",
+                        background: "rgba(255, 255, 255,0.08)",
+                        border: "1px solid rgba(255, 255, 255,0.2)",
+                        borderRadius: 100, padding: "3px 10px",
+                        marginBottom: 10,
+                    }}>
+                        {project.achievement}
+                    </div>
+                )}
                 <p style={{ color: "var(--fg-muted)", fontSize: 14, lineHeight: 1.7, margin: 0 }}>
                     {project.description}
                 </p>
             </div>
 
             {project.hasImage && (
-                <div style={{
-                    marginTop: 24,
-                    flexGrow: 1,
-                    background: "rgba(0,0,0,0.4)",
-                    border: "1px solid rgba(255,255,255,0.05)",
-                    borderRadius: 12,
-                    position: "relative",
-                    overflow: "hidden",
-                }}>
+                <div
+                    className="project-image-container"
+                    style={{
+                        marginTop: 24,
+                        flexGrow: 1,
+                        background: "rgba(0,0,0,0.4)",
+                        border: "1px solid rgba(255,255,255,0.05)",
+                        borderRadius: 12,
+                        position: "relative",
+                        overflow: "hidden",
+                    }}>
                     <img
                         src={project.imageUrl || "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop"}
                         alt={`${project.title} preview`}
@@ -269,6 +280,7 @@ export default function Work() {
 
                 {/* Bento grid */}
                 <div
+                    className="bento-grid"
                     style={{
                         display: "grid",
                         gridTemplateColumns: "repeat(3, 1fr)",
@@ -317,6 +329,9 @@ export default function Work() {
               grid-column: span 1 !important;
               grid-row: span 1 !important;
             }
+            #work .project-image-container {
+              display: none !important;
+            }
           }
         `}</style>
             </div>
@@ -343,7 +358,7 @@ export default function Work() {
                             maxHeight: "90vh",
                             position: "relative",
                             overflow: "hidden", // Clips the inner scrollbar!
-                            boxShadow: "0 20px 40px rgba(0,0,0,0.5), 0 0 100px rgba(94,106,210,0.1)",
+                            boxShadow: "0 20px 40px rgba(0,0,0,0.5), 0 0 100px rgba(255, 255, 255,0.1)",
                             animation: "slideUp 0.4s cubic-bezier(0.16,1,0.3,1) forwards",
                             display: "flex",
                             flexDirection: "column",
@@ -377,8 +392,7 @@ export default function Work() {
                                 position: "relative"
                             }}
                         >
-                            {/* Abstract glow inside modal */}
-                            <div style={{ position: "absolute", top: -100, right: -100, width: 300, height: 300, background: selectedProject.accentColor || "rgba(94,106,210,0.15)", filter: "blur(80px)", borderRadius: "50%", pointerEvents: "none" }} />
+                            {/* Abstract glow inside modal removed */}
 
                             <div style={{
                                 display: "grid",
@@ -399,10 +413,23 @@ export default function Work() {
                                 {/* Right Column: Details */}
                                 <div>
                                     <div style={{ marginBottom: 32 }}>
-                                        <span style={{ fontSize: 13, fontFamily: "monospace", letterSpacing: "0.1em", color: "var(--accent)", textTransform: "uppercase", background: "rgba(94,106,210,0.1)", padding: "4px 12px", borderRadius: 100, border: "1px solid rgba(94,106,210,0.2)" }}>
-                                            {selectedProject.role}
-                                        </span>
-                                        <h2 style={{ fontSize: "clamp(2rem, 4vw, 3rem)", fontWeight: 600, color: "var(--fg)", margin: "16px 0 24px", letterSpacing: "-0.02em", lineHeight: 1.1 }}>
+                                        <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: 8, marginBottom: 16 }}>
+                                            <span style={{ fontSize: 13, fontFamily: "monospace", letterSpacing: "0.1em", color: "var(--accent)", textTransform: "uppercase", background: "rgba(255, 255, 255,0.1)", padding: "4px 12px", borderRadius: 100, border: "1px solid rgba(255, 255, 255,0.2)" }}>
+                                                {selectedProject.role}
+                                            </span>
+                                            {selectedProject.achievement && (
+                                                <span style={{
+                                                    fontSize: 12, fontWeight: 500,
+                                                    color: "rgba(255, 255, 255,0.9)",
+                                                    background: "rgba(255, 255, 255,0.08)",
+                                                    border: "1px solid rgba(255, 255, 255,0.25)",
+                                                    borderRadius: 100, padding: "4px 12px",
+                                                }}>
+                                                    {selectedProject.achievement}
+                                                </span>
+                                            )}
+                                        </div>
+                                        <h2 style={{ fontSize: "clamp(2rem, 4vw, 3rem)", fontWeight: 600, color: "var(--fg)", margin: "0 0 24px", letterSpacing: "-0.02em", lineHeight: 1.1 }}>
                                             {selectedProject.title}
                                         </h2>
 

@@ -2,6 +2,7 @@
 
 import { useRef, useEffect } from "react";
 import { useMouseSpotlight } from "@/hooks/useMouseSpotlight";
+import { RibbonFieldBackground } from "@/components/ribbon-field/RibbonFieldBackground";
 
 /* ─── Hero Section ───────────────────────────────────────────
    Full-viewport hero with:
@@ -36,18 +37,7 @@ export default function Hero() {
                 { opacity: 1, y: 0, duration: 0.8, stagger: 0.12 }
             );
 
-            // Scroll parallax
-            gsap.to(contentRef.current, {
-                scrollTrigger: {
-                    trigger: heroRef.current,
-                    start: "top top",
-                    end: "bottom top",
-                    scrub: true,
-                },
-                opacity: 0,
-                scale: 0.95,
-                y: 100,
-            });
+            // Scroll parallax removed for stability
         })();
 
         return () => {
@@ -68,8 +58,7 @@ export default function Hero() {
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
-                overflow: "hidden",
-                background: "radial-gradient(ellipse at top, #0a0a0f 0%, #050506 50%, #020203 100%)",
+                background: "var(--bg-base)",
             }}
         >
             {/* Grid overlay */}
@@ -78,43 +67,26 @@ export default function Hero() {
             {/* Noise texture */}
             <div className="noise-texture" style={{ position: "absolute", inset: 0, zIndex: 1 }} />
 
-            {/* ── Ambient blobs ── */}
-            {/* Primary blob */}
+            {/* ── Ambient blobs removed ── */}
+
+            {/* ── Ribbon Field WebGL Background ─────────────────────────────────── */}
             <div style={{
-                position: "absolute", top: "-10%", left: "50%", transform: "translateX(-50%)",
-                width: 900, height: 700,
-                background: "radial-gradient(ellipse at center, rgba(94,106,210,0.25) 0%, transparent 70%)",
-                filter: "blur(120px)",
-                animation: "float 9s ease-in-out infinite",
-                zIndex: 1, pointerEvents: "none",
-            }} />
-            {/* Secondary blob */}
-            <div style={{
-                position: "absolute", top: "20%", left: "-10%",
-                width: 600, height: 800,
-                background: "radial-gradient(ellipse at center, rgba(99,102,241,0.15) 0%, transparent 70%)",
-                filter: "blur(120px)",
-                animation: "float-reverse 10s ease-in-out infinite",
-                zIndex: 1, pointerEvents: "none",
-            }} />
-            {/* Tertiary blob */}
-            <div style={{
-                position: "absolute", top: "30%", right: "-5%",
-                width: 500, height: 700,
-                background: "radial-gradient(ellipse at center, rgba(79,70,229,0.12) 0%, transparent 70%)",
-                filter: "blur(100px)",
-                animation: "float-slow 12s ease-in-out infinite",
-                zIndex: 1, pointerEvents: "none",
-            }} />
-            {/* Bottom pulse */}
-            <div style={{
-                position: "absolute", bottom: "5%", left: "50%", transform: "translateX(-50%)",
-                width: 800, height: 200,
-                background: "radial-gradient(ellipse at center, rgba(94,106,210,0.10) 0%, transparent 70%)",
-                filter: "blur(80px)",
-                animation: "pulse-glow 6s ease-in-out infinite",
-                zIndex: 1, pointerEvents: "none",
-            }} />
+                position: "absolute",
+                inset: 0,
+                zIndex: 2,
+                opacity: 0.2,
+                pointerEvents: "none",
+            }}>
+                <RibbonFieldBackground
+                    speed={1.00}
+                    pointerAmount={1.00}
+                    smoothing={0.035}
+                    hue={0}
+                    saturation={0}
+                    brightness={1.00}
+                    opacity={1.00}
+                />
+            </div>
 
             {/* Content */}
             <div
@@ -131,8 +103,8 @@ export default function Hero() {
                 {/* Label */}
                 <div style={{
                     display: "inline-flex", alignItems: "center", gap: 8,
-                    background: "rgba(94,106,210,0.10)",
-                    border: "1px solid rgba(94,106,210,0.25)",
+                    background: "rgba(255, 255, 255,0.10)",
+                    border: "1px solid rgba(255, 255, 255,0.25)",
                     borderRadius: 100,
                     padding: "6px 16px",
                     marginBottom: 32,
@@ -140,7 +112,7 @@ export default function Hero() {
                     <div style={{
                         width: 6, height: 6, borderRadius: "50%",
                         background: "var(--accent)",
-                        boxShadow: "0 0 8px rgba(94,106,210,0.8)",
+                        boxShadow: "0 0 8px rgba(255, 255, 255,0.8)",
                         animation: "pulse-glow 2s ease-in-out infinite",
                     }} />
                     <span style={{ fontSize: 12, fontFamily: "monospace", letterSpacing: "0.1em", color: "var(--accent)", textTransform: "uppercase" }}>
@@ -182,7 +154,7 @@ export default function Hero() {
                         onClick={() => handleScrollTo("#work")}
                         style={{
                             background: "var(--accent)",
-                            color: "#fff",
+                            color: "var(--bg-base)",
                             border: "none",
                             borderRadius: 10,
                             padding: "14px 32px",
@@ -190,19 +162,19 @@ export default function Hero() {
                             fontWeight: 500,
                             cursor: "pointer",
                             fontFamily: "inherit",
-                            boxShadow: "0 0 0 1px rgba(94,106,210,0.5), 0 4px 20px rgba(94,106,210,0.35), inset 0 1px 0 0 rgba(255,255,255,0.15)",
+                            boxShadow: "0 0 0 1px rgba(255, 255, 255,0.5), 0 4px 20px rgba(255, 255, 255,0.35), inset 0 1px 0 0 rgba(255,255,255,0.15)",
                             transition: "all 0.2s ease",
                         }}
                         onMouseEnter={(e) => {
                             const el = e.currentTarget;
                             el.style.background = "var(--accent-bright)";
-                            el.style.boxShadow = "0 0 0 1px rgba(94,106,210,0.6), 0 8px 32px rgba(94,106,210,0.45), inset 0 1px 0 0 rgba(255,255,255,0.2)";
+                            el.style.boxShadow = "0 0 0 1px rgba(255, 255, 255,0.6), 0 8px 32px rgba(255, 255, 255,0.45), inset 0 1px 0 0 rgba(255,255,255,0.2)";
                             el.style.transform = "translateY(-2px)";
                         }}
                         onMouseLeave={(e) => {
                             const el = e.currentTarget;
                             el.style.background = "var(--accent)";
-                            el.style.boxShadow = "0 0 0 1px rgba(94,106,210,0.5), 0 4px 20px rgba(94,106,210,0.35), inset 0 1px 0 0 rgba(255,255,255,0.15)";
+                            el.style.boxShadow = "0 0 0 1px rgba(255, 255, 255,0.5), 0 4px 20px rgba(255, 255, 255,0.35), inset 0 1px 0 0 rgba(255,255,255,0.15)";
                             el.style.transform = "translateY(0)";
                         }}
                         onMouseDown={(e) => { e.currentTarget.style.transform = "scale(0.98)"; }}

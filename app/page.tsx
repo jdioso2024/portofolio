@@ -10,10 +10,12 @@ export default function Home() {
         <main>
             <Hero />
             <About />
-            <Experience />
-            <Work />
-            <Contact />
-            <Footer />
+            <div style={{ position: "relative", zIndex: 2, background: "var(--bg-base)" }}>
+                <Experience />
+                <Work />
+                <Contact />
+                <Footer />
+            </div>
         </main>
     );
 }

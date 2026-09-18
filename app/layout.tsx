@@ -10,11 +10,11 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-    title: "Ariefin Nur Hidayat - Portofolio",
-    description: "Personal portfolio — frontend engineer & designer",
+    title: "Ariefin Nur Hidayat — UI/UX Designer & Frontend Engineer",
+    description: "Portfolio of Ariefin Nur Hidayat — UI/UX designer and frontend engineer specializing in Figma prototyping, React, Next.js, and crafting clean digital experiences.",
     openGraph: {
-        title: "Ariefin Nur Hidayat - Portofolio",
-        description: "Personal portfolio — frontend engineer & designer",
+        title: "Ariefin Nur Hidayat — UI/UX Designer & Frontend Engineer",
+        description: "Portfolio of Ariefin Nur Hidayat — UI/UX designer and frontend engineer specializing in Figma prototyping, React, Next.js, and crafting clean digital experiences.",
         type: "website",
     },
 };

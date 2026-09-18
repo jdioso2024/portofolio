@@ -35,9 +35,8 @@ export default function Footer() {
             >
                 {/* Logo */}
                 <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
-                    <span style={{ fontWeight: 600, fontSize: 15, letterSpacing: "-0.02em", color: "var(--fg)" }}>
-                        <span style={{ color: "var(--accent)" }}>{"<"}</span>
-                        <span style={{ color: "var(--accent)" }}>{" />"}</span>
+                    <span style={{ fontWeight: 600, fontSize: 15, letterSpacing: "-0.02em", color: "var(--fg)", display: "flex", alignItems: "center" }}>
+                        <img src="/logo.svg" alt="Logo" style={{ height: 28, width: "auto" }} />
                     </span>
                     <span style={{ color: "var(--fg-subtle)", fontSize: 13 }}>
                         © {year} -

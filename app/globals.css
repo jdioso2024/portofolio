@@ -1,5 +1,27 @@
 @import "tailwindcss";
 
+/* ─── ThreeUI ribbon-field background ───────────── */
+.threeui-background {
+    position: relative;
+    isolation: isolate;
+    background: #030304;
+    width: 100%;
+    height: 100%;
+    min-width: 0;
+    min-height: 0;
+    overflow: hidden;
+}
+
+.threeui-background>canvas {
+    position: absolute;
+    inset: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+
+
 /* ─── Design Tokens ─────────────────────────────── */
 :root {
     --bg-deep: #020203;
@@ -10,12 +32,12 @@
     --fg: #EDEDEF;
     --fg-muted: #8A8F98;
     --fg-subtle: rgba(255, 255, 255, 0.60);
-    --accent: #5E6AD2;
-    --accent-bright: #6872D9;
-    --accent-glow: rgba(94, 106, 210, 0.3);
+    --accent: #FFFFFF;
+    --accent-bright: #F8F9FA;
+    --accent-glow: rgba(255, 255, 255, 0.15);
     --border: rgba(255, 255, 255, 0.06);
     --border-hover: rgba(255, 255, 255, 0.10);
-    --border-accent: rgba(94, 106, 210, 0.30);
+    --border-accent: rgba(255, 255, 255, 0.20);
 }
 
 /* ─── Base Reset ────────────────────────────────── */
@@ -40,21 +62,11 @@ body {
 
 /* ─── Gradient Text Utilities ───────────────────── */
 .text-gradient {
-    background: linear-gradient(to bottom, #ffffff 0%, rgba(255, 255, 255, 0.95) 50%, rgba(255, 255, 255, 0.70) 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    color: transparent;
+    color: var(--fg);
 }
 
 .text-gradient-accent {
-    background: linear-gradient(90deg, #5E6AD2 0%, #818cf8 50%, #5E6AD2 100%);
-    background-size: 200% auto;
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    color: transparent;
-    animation: shimmer 3s linear infinite;
+    color: var(--accent-bright);
 }
 
 /* ─── Noise Texture ─────────────────────────────── */

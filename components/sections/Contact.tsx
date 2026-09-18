@@ -1,13 +1,13 @@
 "use client";
 
 import { useRef, useEffect } from "react";
-import { Github, Linkedin, Twitter, Instagram, X } from "lucide-react";
+import { Github, Linkedin, Instagram, FileDown } from "lucide-react";
 
 const socials = [
-    { icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/in/ariefin-nur-hidayat-0a96aa248/" },
-    { icon: Instagram, label: "Instagram", href: "https://www.instagram.com/arifinnipin/" },
-    { icon: X, label: "X", href: "https://x.com/tobi_kadachi_?s=11&t=3JCpxNB_oRj6LxXmGwoVBQ" },
-    { icon: Github, label: "GitHub", href: "https://github.com/jdioso2024" },
+    { icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/in/ariefin-nur-hidayat-0a96aa248/", download: false },
+    { icon: Instagram, label: "Instagram", href: "https://www.instagram.com/arifinnipin/", download: false },
+    { icon: Github, label: "GitHub", href: "https://github.com/jdioso2024", download: false },
+    { icon: FileDown, label: "Download CV", href: "/CV.pdf", download: true },
 ];
 
 export default function Contact() {
@@ -42,13 +42,7 @@ export default function Contact() {
                 background: "linear-gradient(to bottom, transparent, rgba(5,5,10,0.5))",
             }}
         >
-            {/* Ambient glow behind form */}
-            <div style={{
-                position: "absolute", top: "20%", left: "50%", transform: "translateX(-50%)",
-                width: 600, height: 400,
-                background: "radial-gradient(ellipse at center, rgba(94,106,210,0.12) 0%, transparent 70%)",
-                filter: "blur(80px)", pointerEvents: "none", zIndex: 0,
-            }} />
+            {/* Ambient glow removed */}
 
             <div style={{ maxWidth: 640, margin: "0 auto", position: "relative", zIndex: 1 }}>
                 {/* Label */}
@@ -75,12 +69,13 @@ export default function Contact() {
                     </p>
 
                     <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: 24, marginTop: 48 }}>
-                        {socials.map(({ icon: Icon, label, href }) => (
+                        {socials.map(({ icon: Icon, label, href, download: isDownload }) => (
                             <a
                                 key={label}
                                 href={href}
-                                target={href.startsWith("http") ? "_blank" : undefined}
-                                rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
+                                target={!isDownload && href.startsWith("http") ? "_blank" : undefined}
+                                rel={!isDownload && href.startsWith("http") ? "noopener noreferrer" : undefined}
+                                download={isDownload ? "Ariefin_Nur_Hidayat_CV.pdf" : undefined}
                                 style={{
                                     display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: 16,
                                     background: "rgba(255,255,255,0.02)",
@@ -92,10 +87,10 @@ export default function Contact() {
                                 }}
                                 onMouseEnter={(e) => {
                                     const el = e.currentTarget;
-                                    el.style.borderColor = "rgba(94,106,210,0.4)";
-                                    el.style.background = "rgba(94,106,210,0.06)";
+                                    el.style.borderColor = "rgba(255, 255, 255,0.4)";
+                                    el.style.background = "rgba(255, 255, 255,0.06)";
                                     el.style.transform = "translateY(-6px)";
-                                    el.style.boxShadow = "0 20px 40px rgba(0,0,0,0.3), 0 0 40px rgba(94,106,210,0.15)";
+                                    el.style.boxShadow = "0 20px 40px rgba(0,0,0,0.3), 0 0 40px rgba(255, 255, 255,0.15)";
                                 }}
                                 onMouseLeave={(e) => {
                                     const el = e.currentTarget;
@@ -115,7 +110,9 @@ export default function Contact() {
                                     <Icon size={32} color="var(--accent)" />
                                 </div>
                                 <span style={{ fontSize: 18, fontWeight: 500, letterSpacing: "-0.01em" }}>{label}</span>
-                                <span style={{ fontSize: 14, color: "var(--fg-muted)" }}>Let's connect</span>
+                                <span style={{ fontSize: 14, color: "var(--fg-muted)" }}>
+                                    {isDownload ? "PDF · Quick download" : "Let's connect"}
+                                </span>
                             </a>
                         ))}
                     </div>
