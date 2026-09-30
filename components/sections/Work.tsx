@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef, useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 import { ArrowUpRight, X } from "lucide-react";
 import { useMouseSpotlight } from "@/hooks/useMouseSpotlight";
 
@@ -24,13 +25,13 @@ const projects: Project[] = [
         title: "Chandramawa",
         description: "Many people find sorting and recycling waste confusing and tedious — there was no engaging digital tool to simplify the process. Chandramawa was designed to change that.",
         tech: ["Figma"],
-        role: "Head of Technology",
+        role: "Technology Lead",
         colSpan: "col-span-2",
         rowSpan: "row-span-2",
         accentColor: "rgba(255, 255, 255,0.3)",
         hasImage: true,
         imageUrl: "/projects/Chandramaw.webp",
-        overview: "As Head of Technology, I led the end-to-end product design — defining the user flow, structuring information architecture, and designing all UI screens in Figma. The app guides users through locating waste collection points, selecting waste categories, and scheduling pickups. The visual language is deliberately playful and approachable to make recycling feel less like a chore and more like a habit.\n\nThe project was pitched at a Business Competition at Management and Science University (MSU) Malaysia in 2024, where the Chandramawa team secured 3rd Place.",
+        overview: "As Technology Lead, I led the end-to-end product design — defining the user flow, structuring information architecture, and designing all UI screens in Figma. The app guides users through locating waste collection points, selecting waste categories, and scheduling pickups. The visual language is deliberately playful and approachable to make recycling feel less like a chore and more like a habit.\n\nThe project was pitched at a Business Competition at Management and Science University (MSU) Malaysia in 2024, where the Chandramawa team secured 3rd Place.",
         achievement: "🏆 3rd Place · Business Pitching Competition · MSU Malaysia 2024",
         link: "https://www.figma.com/proto/1fasUr9KwD9ZHRiQ9raVEH/Chandramawa-Project?node-id=165-491&p=f&viewport=-4372%2C-1010%2C0.42&t=cgdP5eQV5OM3y6xM-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=134%3A432&page-id=0%3A1",
     },
@@ -337,10 +338,10 @@ export default function Work() {
             </div>
 
             {/* Modal Overlay */}
-            {selectedProject && (
+            {selectedProject && typeof document !== "undefined" && createPortal(
                 <div
                     style={{
-                        position: "fixed", inset: 0, zIndex: 100,
+                        position: "fixed", inset: 0, zIndex: 9999,
                         display: "flex", alignItems: "center", justifyContent: "center",
                         padding: 24,
                         background: "rgba(0,0,0,0.7)", backdropFilter: "blur(12px)",
@@ -354,8 +355,8 @@ export default function Work() {
                             background: "linear-gradient(135deg, rgba(30,30,35,0.95), rgba(15,15,20,0.95))",
                             border: "1px solid rgba(255,255,255,0.1)",
                             borderRadius: 24,
-                            width: "100%", maxWidth: 1400,
-                            maxHeight: "90vh",
+                            width: "100%", maxWidth: 1200,
+                            maxHeight: "85vh",
                             position: "relative",
                             overflow: "hidden", // Clips the inner scrollbar!
                             boxShadow: "0 20px 40px rgba(0,0,0,0.5), 0 0 100px rgba(255, 255, 255,0.1)",
@@ -388,72 +389,73 @@ export default function Work() {
                             style={{
                                 flexGrow: 1,
                                 overflowY: "auto", overflowX: "hidden",
-                                padding: "48px",
+                                padding: "40px",
                                 position: "relative"
                             }}
                         >
                             {/* Abstract glow inside modal removed */}
 
-                            <div style={{
-                                display: "grid",
-                                gridTemplateColumns: "1fr 1fr",
-                                gap: 48,
-                                alignItems: "start",
-                                position: "relative", zIndex: 2
-                            }}>
-                                {/* Left Column: Square Image */}
-                                <div style={{ borderRadius: 16, overflow: "hidden", position: "relative", border: "1px solid rgba(255,255,255,0.05)", aspectRatio: "1 / 1", width: "100%" }}>
-                                    <img
-                                        src={selectedProject.imageUrl || "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop"}
-                                        alt={selectedProject.title}
-                                        style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
-                                    />
+                            <div className="modal-layout-container" style={{ position: "relative", zIndex: 2 }}>
+
+                                {/* Image */}
+                                <div className="modal-img">
+                                    <div style={{ borderRadius: 16, overflow: "hidden", position: "relative", border: "1px solid rgba(255,255,255,0.05)", width: "100%", height: "100%" }}>
+                                        <img
+                                            src={selectedProject.imageUrl || "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop"}
+                                            alt={selectedProject.title}
+                                            style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
+                                        />
+                                    </div>
                                 </div>
 
-                                {/* Right Column: Details */}
-                                <div>
-                                    <div style={{ marginBottom: 32 }}>
-                                        <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: 8, marginBottom: 16 }}>
-                                            <span style={{ fontSize: 13, fontFamily: "monospace", letterSpacing: "0.1em", color: "var(--accent)", textTransform: "uppercase", background: "rgba(255, 255, 255,0.1)", padding: "4px 12px", borderRadius: 100, border: "1px solid rgba(255, 255, 255,0.2)" }}>
-                                                {selectedProject.role}
+                                {/* Header (Role + Title) */}
+                                <div className="modal-header">
+                                    <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: 8, marginBottom: 16 }}>
+                                        <span style={{ fontSize: 13, fontFamily: "monospace", letterSpacing: "0.1em", color: "var(--accent)", textTransform: "uppercase", background: "rgba(255, 255, 255,0.1)", padding: "4px 12px", borderRadius: 100, border: "1px solid rgba(255, 255, 255,0.2)" }}>
+                                            {selectedProject.role}
+                                        </span>
+                                        {selectedProject.achievement && (
+                                            <span style={{
+                                                fontSize: 12, fontWeight: 500,
+                                                color: "rgba(255, 255, 255,0.9)",
+                                                background: "rgba(255, 255, 255,0.08)",
+                                                border: "1px solid rgba(255, 255, 255,0.25)",
+                                                borderRadius: 100, padding: "4px 12px",
+                                            }}>
+                                                {selectedProject.achievement}
                                             </span>
-                                            {selectedProject.achievement && (
-                                                <span style={{
-                                                    fontSize: 12, fontWeight: 500,
-                                                    color: "rgba(255, 255, 255,0.9)",
-                                                    background: "rgba(255, 255, 255,0.08)",
-                                                    border: "1px solid rgba(255, 255, 255,0.25)",
-                                                    borderRadius: 100, padding: "4px 12px",
-                                                }}>
-                                                    {selectedProject.achievement}
-                                                </span>
-                                            )}
-                                        </div>
-                                        <h2 style={{ fontSize: "clamp(2rem, 4vw, 3rem)", fontWeight: 600, color: "var(--fg)", margin: "0 0 24px", letterSpacing: "-0.02em", lineHeight: 1.1 }}>
-                                            {selectedProject.title}
-                                        </h2>
-
-                                        {/* CTA Button */}
-                                        <a
-                                            href={selectedProject.link || "#"}
-                                            target="_blank"
-                                            rel="noreferrer"
-                                            style={{
-                                                display: "inline-flex", alignItems: "center", gap: 8,
-                                                background: "rgba(255,255,255,0.08)", color: "var(--fg)",
-                                                border: "1px solid rgba(255,255,255,0.15)",
-                                                padding: "12px 24px", borderRadius: 100,
-                                                fontSize: 15, fontWeight: 500, textDecoration: "none",
-                                                transition: "background 0.2s, transform 0.2s",
-                                            }}
-                                            onMouseEnter={(e) => { e.currentTarget.style.background = "rgba(255,255,255,0.15)"; e.currentTarget.style.transform = "translateY(-2px)" }}
-                                            onMouseLeave={(e) => { e.currentTarget.style.background = "rgba(255,255,255,0.08)"; e.currentTarget.style.transform = "translateY(0)" }}
-                                        >
-                                            View Prototype <ArrowUpRight size={16} />
-                                        </a>
+                                        )}
                                     </div>
+                                    <h2 className="modal-title" style={{ fontSize: "clamp(1.8rem, 3vw, 2.5rem)", fontWeight: 600, color: "var(--fg)", margin: "0", letterSpacing: "-0.02em", lineHeight: 1.1 }}>
+                                        {selectedProject.title}
+                                    </h2>
+                                </div>
 
-                                    <p style={{ color: "var(--fg-muted)", fontSize: 17, lineHeight: 1.8, marginBottom: 32 }}>
+                                {/* CTA Button */}
+                                <div className="modal-btn">
+                                    <a
+                                        href={selectedProject.link || "#"}
+                                        target="_blank"
+                                        rel="noreferrer"
+                                        style={{
+                                            display: "inline-flex", alignItems: "center", justifyContent: "center", gap: 8,
+                                            background: "rgba(255,255,255,0.08)", color: "var(--fg)",
+                                            border: "1px solid rgba(255,255,255,0.15)",
+                                            padding: "12px 24px", borderRadius: 100,
+                                            fontSize: 15, fontWeight: 500, textDecoration: "none",
+                                            transition: "background 0.2s, transform 0.2s",
+                                            width: "100%",
+                                        }}
+                                        onMouseEnter={(e) => { e.currentTarget.style.background = "rgba(255,255,255,0.15)"; e.currentTarget.style.transform = "translateY(-2px)" }}
+                                        onMouseLeave={(e) => { e.currentTarget.style.background = "rgba(255,255,255,0.08)"; e.currentTarget.style.transform = "translateY(0)" }}
+                                    >
+                                        View Prototype <ArrowUpRight size={16} />
+                                    </a>
+                                </div>
+
+                                {/* Text Content */}
+                                <div className="modal-text">
+                                    <p style={{ color: "var(--fg-muted)", fontSize: 15, lineHeight: 1.7, marginBottom: 32 }}>
                                         {selectedProject.description}
                                     </p>
 
@@ -478,7 +480,8 @@ export default function Work() {
                             </div>
                         </div>
                     </div>
-                </div>
+                </div>,
+                document.body
             )}
 
             <style>{`
@@ -497,6 +500,66 @@ export default function Work() {
                 }
                 .custom-scrollbar::-webkit-scrollbar-thumb:hover {
                     background: rgba(255, 255, 255, 0.2);
+                }
+
+                .modal-layout-container {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    grid-template-areas:
+                        "img header"
+                        "img btn"
+                        "img text";
+                    gap: 0 40px;
+                    align-items: start;
+                }
+                .modal-img { grid-area: img; }
+                .modal-img > div {
+                    aspect-ratio: 4 / 3;
+                }
+                .modal-header { grid-area: header; }
+                .modal-btn { grid-area: btn; margin-bottom: 24px; margin-top: 32px; }
+                .modal-text { grid-area: text; }
+
+                @media (max-width: 768px) {
+                    .modal-layout-container {
+                        grid-template-columns: 1fr;
+                        grid-template-areas:
+                            "img"
+                            "header"
+                            "btn"
+                            "text";
+                        gap: 16px;
+                    }
+                    .modal-img > div {
+                        aspect-ratio: 16 / 9 !important;
+                    }
+                    .modal-header {
+                        display: flex;
+                        flex-direction: column-reverse; /* title above tags */
+                        align-items: flex-start;
+                        gap: 12px;
+                    }
+                    .modal-header > div {
+                        margin-bottom: 0 !important;
+                        flex-shrink: 0;
+                    }
+                    .modal-header > div > span {
+                        font-size: 11px !important;
+                        padding: 3px 8px !important;
+                    }
+                    .modal-header h2.modal-title {
+                        font-size: 1.6rem !important; /* Slightly larger for full width */
+                        margin-bottom: 0 !important;
+                        text-align: left;
+                        width: 100%;
+                    }
+                    .modal-btn { 
+                        margin-bottom: 0px; 
+                        margin-top: 8px;
+                    }
+                    .modal-btn a {
+                        width: 100%;
+                    }
                 }
             `}</style>
         </section>
