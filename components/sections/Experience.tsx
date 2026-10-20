@@ -45,13 +45,13 @@ const experiences = [
     },
     {
         period: "2023",
-        role: "Visual Asset Creator",
-        company: "ATMICUP 2023",
+        role: "Front-End Engineer",
+        company: "Dikari Strategic",
         companyType: "Freelance",
-        location: "Sukoharjo",
+        location: "Yogyakarta",
         description:
-            "Created visual assets for ATMICUP 2023 using a pixel art approach inspired by classic games and fantasy characters. A dragon character was developed as the main mascot to convey a competitive, playful, and memorable identity suited to the gaming event's theme.",
-        tech: ["Adobe After Effects"],
+            "Developed the company profile website for Dikari Strategic, a marketing and creative agency based in Yogyakarta. Built a responsive and modern web presence to showcase the agency's creative campaigns, strategic services, and brand portfolio.",
+        tech: ["React", "Next.js", "Tailwind CSS"],
     },
     {
         period: "2020 – 2021",

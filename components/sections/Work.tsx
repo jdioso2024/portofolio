@@ -54,18 +54,18 @@ const projects: Project[] = [
         accentColor: "rgba(139,92,246,0.25)",
         imageUrl: "/projects/DEN.webp",
         overview: "I developed the full company profile website from the ground up using Next.js and GSAP. The site structure was designed for clarity — each section guides visitors through the company's background, service offerings, and project track record in a logical, digestible sequence.\n\nGSAP-powered scroll animations were used selectively to add a sense of polish and motion without compromising performance or readability. The result is a professional, fast-loading site that accurately represents PT DEN's standing in the industry.",
-        link: "https://demo-compro-2.pages.dev/",
+        link: "https://dayanaenergi.co.id/",
     },
     {
-        title: "ATMICUP 2023",
-        description: "ATMICUP 2023 needed distinctive visual assets that would give the gaming competition a recognizable identity — something that felt simultaneously competitive and fun.",
-        tech: ["Adobe After Effects"],
-        role: "Visual Asset Creation",
+        title: "Company Profile Dikari Strategic",
+        description: "Dikari Strategic required a modern company profile website to showcase their strategic marketing services, creative campaigns, and brand identity as a marketing agency based in Yogyakarta.",
+        tech: ["React", "Next.js", "Tailwind CSS"],
+        role: "Front-End Engineer",
         colSpan: "col-span-2",
         accentColor: "rgba(79,70,229,0.25)",
-        imageUrl: "/projects/ATMICUP2023.webp",
-        overview: "I created the visual identity assets for ATMICUP 2023 using a pixel art style inspired by classic retro games and high-fantasy themes. A dragon character was developed as the central mascot — its design strikes a balance between fierce and approachable, fitting for a student gaming event.\n\nThe assets were produced in Adobe After Effects and delivered as animated visuals suitable for event screens, promotional materials, and digital banners.",
-        link: "https://drive.google.com/drive/folders/1MKyxx-X4RnM8_QAF3kyVkZhntOmK8w44?usp=sharing",
+        imageUrl: "/projects/dikari.webp",
+        overview: "I developed the company profile website for Dikari Strategic, a marketing and creative agency based in Yogyakarta. The project focused on presenting their suite of services, brand positioning, and portfolio of creative campaigns in a visually captivating and professional structure.\n\nThe website was built with responsive layouts, modern typography, and fluid interactions to deliver an engaging browsing experience that reflects the agency's creative excellence.",
+        link: "https://dikaristrategic.pages.dev/",
     },
     {
         title: "Project Skrining Autisme Anak Tangguh",
@@ -449,7 +449,7 @@ export default function Work() {
                                         onMouseEnter={(e) => { e.currentTarget.style.background = "rgba(255,255,255,0.15)"; e.currentTarget.style.transform = "translateY(-2px)" }}
                                         onMouseLeave={(e) => { e.currentTarget.style.background = "rgba(255,255,255,0.08)"; e.currentTarget.style.transform = "translateY(0)" }}
                                     >
-                                        View Prototype <ArrowUpRight size={16} />
+                                        {selectedProject.link?.includes("figma") ? "View Prototype" : "Visit Website"} <ArrowUpRight size={16} />
                                     </a>
                                 </div>
 

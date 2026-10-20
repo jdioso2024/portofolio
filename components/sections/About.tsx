@@ -18,7 +18,6 @@ export default function About() {
         const updateHeight = () => {
             if (sectionRef.current) setAboutHeight(sectionRef.current.offsetHeight);
         };
-        // Delay slightly on mount so fonts logic applies, wait just 1 frame
         requestAnimationFrame(updateHeight);
         window.addEventListener("resize", updateHeight);
         return () => window.removeEventListener("resize", updateHeight);

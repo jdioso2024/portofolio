@@ -4,14 +4,7 @@ import { useRef, useEffect } from "react";
 import { useMouseSpotlight } from "@/hooks/useMouseSpotlight";
 import { RibbonFieldBackground } from "@/components/ribbon-field/RibbonFieldBackground";
 
-/* ─── Hero Section ───────────────────────────────────────────
-   Full-viewport hero with:
-   - 3-layer ambient blob system (CSS animated)
-   - Grid + noise texture overlays
-   - Gradient headline + accent shimmer sub-phrase  
-   - Two CTAs (primary + secondary)
-   - GSAP parallax on scroll
-──────────────────────────────────────────────────────────── */
+
 export default function Hero() {
     const heroRef = useRef<HTMLDivElement>(null);
     const contentRef = useRef<HTMLDivElement>(null);
