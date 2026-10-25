@@ -133,6 +133,7 @@ function ProjectDialog({ project, theme, onClose, restoreFocus }) {
     <dialog
       ref={dialogRef}
       className="project-dialog"
+      data-project={theme.id}
       id="project-dialog"
       aria-labelledby="project-dialog-title"
       style={{ "--dialog-bg": theme.background, "--dialog-ink": theme.color }}

@@ -942,6 +942,9 @@ body.project-dialog-open {
   letter-spacing: -0.05em;
   overflow-wrap: anywhere;
 }
+.project-dialog[data-project="dikari"] .project-dialog__title {
+  font-size: clamp(32px, 4.8vw, 64px);
+}
 .project-dialog__details {
   display: grid;
   gap: 16px;
