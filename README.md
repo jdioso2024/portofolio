@@ -22,10 +22,24 @@ Buka http://localhost:3000. Jika PowerShell memblokir `npm.ps1`, gunakan
 ```sh
 npm run lint
 npm run build
-npm start
 ```
 
+Build menghasilkan folder `out/` berisi HTML, CSS, JavaScript, dan aset statis.
+Untuk preview hasil build, jalankan `npx serve out`. Mode static export memakai
+server file statis untuk produksi; `next start` tidak digunakan.
+
 Setelah lockfile tersedia, gunakan `npm ci` untuk instalasi dengan versi yang sama.
+
+## Cloudflare Pages
+
+- Framework preset: **Next.js (Static HTML Export)**.
+- Build command: `npm run build`.
+- Build output directory: `out`.
+- Root directory: kosong jika `package.json` berada di root repository.
+
+Konfigurasi `output: "export"` di `next.config.mjs` membuat folder `out/`
+secara otomatis setiap build. Commit dan push perubahan konfigurasi ini sebelum
+menjalankan deployment ulang.
 
 ## Struktur
 
