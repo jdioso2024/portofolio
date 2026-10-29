@@ -87,11 +87,9 @@ export default function Hero() {
                       strokeLinejoin={"round"}
                       aria-hidden={"true"}
                     >
-                      <path
-                        d={
-                          "M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"
-                        }
-                      />
+                      <rect x={"3"} y={"3"} width={"18"} height={"18"} rx={"5"} />
+                      <circle cx={"12"} cy={"12"} r={"4"} />
+                      <circle cx={"17.5"} cy={"6.5"} r={"0.5"} fill={"currentColor"} />
                     </svg>
                   </span>
                   <span>@arifinnipin</span>
