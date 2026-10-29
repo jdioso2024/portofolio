@@ -1024,19 +1024,44 @@ body.project-dialog-open {
   aspect-ratio: 1;
   max-height: calc(100dvh - 150px);
   touch-action: pan-y;
+  cursor: grab;
+  user-select: none;
+  -webkit-user-select: none;
+}
+.project-carousel__stage {
+  overflow: hidden;
+  border-radius: 12px;
+}
+.project-carousel__stage[data-dragging="true"] {
+  cursor: grabbing;
+}
+.project-carousel__track {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform;
+}
+.project-carousel__stage[data-dragging="true"] .project-carousel__track {
+  transition: none;
 }
 .project-carousel__stage img {
-  position: absolute;
-  inset: 0;
+  flex: 0 0 100%;
   width: 100%;
   height: 100%;
   object-fit: contain;
   border-radius: 12px;
+  pointer-events: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .project-carousel__track {
+    transition: none;
+  }
 }
 .project-carousel__controls {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   gap: 12px;
 }
 .project-carousel__controls[hidden] {

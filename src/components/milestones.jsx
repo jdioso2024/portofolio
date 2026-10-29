@@ -54,8 +54,8 @@ export default function Milestones() {
                 Technology Lead · Chandramawa Team
                 <span>
                   Owned the application flow and user-interface design, helping
-                  the team secure 3rd place at Management and Science University
-                  Malaysia <br /> an international-level competition.
+                  the team secure 3rd place in an international-level
+                  competition at Management and Science University, Malaysia.
                 </span>
               </p>
             </div>

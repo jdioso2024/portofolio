@@ -65,6 +65,8 @@ function ProjectDialog({ project, theme, onClose, restoreFocus }) {
   const dialogRef = useRef(null);
   const swipeStart = useRef(null);
   const [slideIndex, setSlideIndex] = useState(0);
+  const [dragX, setDragX] = useState(0);
+  const [dragging, setDragging] = useState(false);
   const imageCount = project.images.length;
 
   useEffect(() => {
@@ -112,21 +114,36 @@ function ProjectDialog({ project, theme, onClose, restoreFocus }) {
       dialogRef.current.close();
   }
 
-  function handleTouchStart(event) {
-    swipeStart.current =
-      event.touches.length === 1
-        ? { x: event.touches[0].clientX, y: event.touches[0].clientY }
-        : null;
+  function handlePointerDown(event) {
+    if (imageCount < 2) return;
+    if (event.pointerType === "mouse" && event.button !== 0) return;
+    swipeStart.current = { x: event.clientX, y: event.clientY };
+    event.currentTarget.setPointerCapture?.(event.pointerId);
+    setDragging(true);
   }
 
-  function handleTouchEnd(event) {
+  function handlePointerMove(event) {
+    const start = swipeStart.current;
+    if (!start) return;
+    let dx = event.clientX - start.x;
+    // Resist dragging past the first/last image.
+    if ((slideIndex === 0 && dx > 0) || (slideIndex === imageCount - 1 && dx < 0))
+      dx *= 0.3;
+    setDragX(dx);
+  }
+
+  function handlePointerUp(event) {
     const start = swipeStart.current;
     swipeStart.current = null;
-    if (!start || imageCount < 2 || !event.changedTouches.length) return;
-    const dx = event.changedTouches[0].clientX - start.x;
-    const dy = event.changedTouches[0].clientY - start.y;
-    if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy))
-      stepSlide(dx < 0 ? 1 : -1);
+    setDragging(false);
+    setDragX(0);
+    if (!start || event.type === "pointercancel") return;
+    const dx = event.clientX - start.x;
+    const dy = event.clientY - start.y;
+    if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy)) {
+      const next = slideIndex + (dx < 0 ? 1 : -1);
+      if (next >= 0 && next < imageCount) setSlideIndex(next);
+    }
   }
 
   return (
@@ -181,6 +198,16 @@ function ProjectDialog({ project, theme, onClose, restoreFocus }) {
             >
               Try Prototype <span aria-hidden="true">↗</span>
             </a>
+            {project.certificateUrl && (
+              <a
+                className="prototype-link"
+                href={project.certificateUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                View Certificate <span aria-hidden="true">↗</span>
+              </a>
+            )}
             <p className="prototype-link__note" id="prototype-note">
               {project.prototypeUrl
                 ? "Opens in a new tab."
@@ -196,27 +223,35 @@ function ProjectDialog({ project, theme, onClose, restoreFocus }) {
         >
           <div
             className="project-carousel__stage"
-            onTouchStart={handleTouchStart}
-            onTouchEnd={handleTouchEnd}
-            onTouchCancel={() => {
-              swipeStart.current = null;
-            }}
+            data-dragging={dragging ? "true" : "false"}
+            onPointerDown={handlePointerDown}
+            onPointerMove={handlePointerMove}
+            onPointerUp={handlePointerUp}
+            onPointerCancel={handlePointerUp}
           >
-            <img
-              src={project.images[slideIndex]}
-              alt={`${project.imageAlt}${imageCount > 1 ? ` — image ${slideIndex + 1} of ${imageCount}` : ""}`}
-              decoding="async"
-            />
+            <div
+              className="project-carousel__track"
+              style={{
+                transform: `translateX(calc(${-slideIndex * 100}% + ${dragX}px))`,
+              }}
+            >
+              {project.images.map((src, index) => (
+                <img
+                  key={src}
+                  src={src}
+                  alt={
+                    index === slideIndex
+                      ? `${project.imageAlt}${imageCount > 1 ? ` — image ${slideIndex + 1} of ${imageCount}` : ""}`
+                      : ""
+                  }
+                  aria-hidden={index === slideIndex ? undefined : true}
+                  decoding="async"
+                  draggable={false}
+                />
+              ))}
+            </div>
           </div>
           <div className="project-carousel__controls" hidden={imageCount < 2}>
-            <button
-              className="project-carousel__arrow"
-              type="button"
-              aria-label="Previous image"
-              onClick={() => stepSlide(-1)}
-            >
-              ←
-            </button>
             <div className="project-carousel__pagination">
               <p
                 className="mono project-carousel__count"
@@ -242,14 +277,6 @@ function ProjectDialog({ project, theme, onClose, restoreFocus }) {
                 ))}
               </div>
             </div>
-            <button
-              className="project-carousel__arrow"
-              type="button"
-              aria-label="Next image"
-              onClick={() => stepSlide(1)}
-            >
-              →
-            </button>
           </div>
         </div>
       </div>

@@ -139,8 +139,8 @@ export const projects = {
         <p className={"p-role"}>Technology Lead · Chandramawa Team</p>
         <p>
           Owned the application flow and user-interface design, helping the team
-          secure 3rd place at Management and Science University Malaysia <br />{" "}
-          an international-level competition.
+          secure 3rd place in an international-level competition at Management
+          and Science University, Malaysia.
         </p>
       </>
     ),
@@ -152,6 +152,7 @@ export const projects = {
       "/assets/projects/chandramawa-next.png",
     ],
     imageAlt: "Chandramawa app mockup showing mobile interfaces",
+    certificateUrl: "/Chandramawa.pdf",
     prototypeUrl:
       "https://www.figma.com/proto/1fasUr9KwD9ZHRiQ9raVEH/Chandramawa-Project?node-id=165-491&p=f&viewport=-4372%2C-1010%2C0.42&t=cgdP5eQV5OM3y6xM-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=134%3A432&page-id=0%3A1",
   },
