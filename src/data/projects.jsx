@@ -52,7 +52,7 @@ export const projects = {
       "/assets/projects/dikari-mobile.png",
     ],
     imageAlt: "Dikari Strategic website mockup on laptop and mobile",
-    prototypeUrl: "https://dikaristrategic.pages.dev/",
+    prototypeUrl: "https://dikaristrategic.com/",
   },
   philia: {
     label: "View Philia project",
